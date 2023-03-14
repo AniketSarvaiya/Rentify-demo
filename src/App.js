@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import About from './components/About/About';
+import Contact from './components/Contact/Contact';
+import Home from './components/Home/Home';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import MyNavbar from './components/Navbar/MyNavbar';
+import Cars from './components/Cars';
+import Bikes from './components/Bikes';
+import PageError from './components/PageError';
+import Ride from './components/Ride/Ride';
+// import "bootstrap/dist/js/bootstrap.min.js";
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+          <MyNavbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/cars" element={<Cars />} />
+          <Route path="/bikes" element={<Bikes />} />
+          <Route path='/*' element={<PageError />} />
+          <Route path='/ride' element={<Ride/>} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

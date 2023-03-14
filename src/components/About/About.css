@@ -1,0 +1,32 @@
+.fy{
+    color: orangered;
+    font-weight: 500;
+}
+.about-heading>h2{
+    font-weight: 400;
+    margin-bottom: 50px;
+    /* text-decoration-line: underline; */
+}
+.avtar{
+    height: 100px;
+    width: 100px;
+}
+
+.team-name{
+    margin : 100px;
+    font-weight: 600;
+}
+.icons{
+    /* color: orangered; */
+    /* border: 2px solid orangered;
+    padding: 10px; */
+    color: orangered;
+    height: 15px;
+    width: 15px;
+}
+
+.icons:hover{
+    color: #000;
+    transition: all 0.2s;
+}
+

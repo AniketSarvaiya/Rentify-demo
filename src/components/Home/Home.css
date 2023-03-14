@@ -1,0 +1,44 @@
+.home-img{
+        /* height: 800px;
+        width: 700px; */
+    /* overflow: hidden; */
+}
+img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    border-radius: 50px;
+    position: relative;
+}
+.home-section{
+    position: relative;
+}
+
+
+/* .img-section::before
+{
+    position: absolute;
+    content: '';
+    height: 800px;
+    width: 600px;
+    background-color: orange;
+    right: 160px;
+    top: 20px;
+    border-radius: 50px;
+} */
+
+h1>span{
+    font-size: 45px;
+    line-height: 45px;
+    color: orangered;
+    font-weight: 700;
+    position: relative;
+
+}
+/* .home-img-section{
+    order: 1;
+}
+.home-text-section {
+    order: 2;
+} */
