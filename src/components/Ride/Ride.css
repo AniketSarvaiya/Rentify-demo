@@ -1,7 +1,11 @@
 /* .ride-header{
     font-weight: bolder !important  ;
 } */
-
+.ride-main-container {
+    padding-top: 60px;
+    /* height: 900px; */
+    margin-bottom: 100px;
+}
 .ride-container{
     margin-top: 40px;
 }

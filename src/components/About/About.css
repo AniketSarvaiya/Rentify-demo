@@ -1,9 +1,14 @@
+.about-main-container{
+    padding-top: 60px;
+    margin-bottom: 100px;
+}
 .fy{
     color: orangered;
     font-weight: 500;
 }
 .about-heading>h2{
-    font-weight: 400;
+    font-weight: 500;
+    color: orangered;
     margin-bottom: 50px;
     /* text-decoration-line: underline; */
 }

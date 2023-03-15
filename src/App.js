@@ -9,6 +9,7 @@ import Cars from './components/Cars';
 import Bikes from './components/Bikes';
 import PageError from './components/PageError';
 import Ride from './components/Ride/Ride';
+import MainFeed from './components/MainFeed';
 // import "bootstrap/dist/js/bootstrap.min.js";
 
 
@@ -16,7 +17,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-          <MyNavbar />
+          {/* <MyNavbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -25,7 +26,8 @@ function App() {
           <Route path="/bikes" element={<Bikes />} />
           <Route path='/*' element={<PageError />} />
           <Route path='/ride' element={<Ride/>} />
-        </Routes>
+        </Routes> */}
+        <MainFeed/> 
       </BrowserRouter>
     </div>
   );

@@ -1,5 +1,5 @@
 .contact-row{
     background-image: linear-gradient(to left,orange , orangered);
-    height: 800px;
+    /* height: 100vh; */
     width: 100%;
 }   
