@@ -1,9 +1,10 @@
 import React from 'react'
+import CBItem from './CBComponent/CBItem'
 
-function Cars() {
+function Cars(props) {
   return (
-    <div>
-    <h1>Cars</h1>
+    <div ref={props.carref}>
+      <CBItem />
     </div>
   )
 }

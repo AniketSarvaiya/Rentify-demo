@@ -13,7 +13,12 @@ body{
     color: orangered;
 }
 
-.nav-link.active {
+.nav-link{
+    font-weight: 550;
+    color: #000;
+}
+
+.nav-link.active-link{
     border-bottom: 3px solid orangered;
     color: black;
 }

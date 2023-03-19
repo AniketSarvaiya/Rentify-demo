@@ -11,7 +11,7 @@ function About(props) {
     return (
         <Fragment>
             <div className="container about-main-container " ref={props.aboutref}>
-                <div className="row">
+                <div className="row mb-5">
                     <div className="row">
                         <div className="container mb-5">
                             <div className="about-heading fw-5 mt-5">

@@ -1,5 +1,56 @@
 .contact-row{
-    background-image: linear-gradient(to left,orange , orangered);
+    /* background-image: linear-gradient(to left,orange , orangered); */
     /* height: 100vh; */
     width: 100%;
-}   
+    margin-top: 200px;
+}  
+.contact-heading{
+    color: orangered;
+}
+.fy{
+    color: orangered;
+    font-weight: 500;
+    padding-left: 2px;
+} 
+.info-icon{
+    margin: 10px;
+    font-size: larger;
+    margin-right: 15px;
+    /* color: #fff; */
+}
+.social-icons{
+    font-size: x-large;
+    color: orangered;
+    margin-bottom: 100px;
+}
+.bottom-social{
+    margin-top: 100px;
+    margin-bottom: 30px;
+}
+input,
+textarea {
+	background-color: #eee;
+	/* border: none; */
+	padding: 12px 15px;
+	margin: 8px 0;
+	width: 100%;
+    border-radius: 6px;
+}
+.contact-submit-btn{
+border-radius: 20px;
+	border: orangered;
+	/* width: 100px; */
+	/* border: 1px solid grey; */
+	background-color: orangered;
+	color: white;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 13px 70px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: all 0.2s;
+}
+
+.contact-submit-btn:hover{
+    color: #000;
+}

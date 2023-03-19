@@ -1,6 +1,7 @@
 import '../Navbar/MyNavbar.css'
-import { NavLink } from 'react-router-dom'
-import { useRef } from 'react';
+import { NavLink, Link, useNavigate, useLocation } from 'react-router-dom'
+// import { useRef } from 'react';
+// import Login from '../Login&Register/Login';
 
 function MyNavbar(props) {
     // const location = useLocation();
@@ -18,6 +19,24 @@ function MyNavbar(props) {
     //     });
     // };
 
+    const location = window.location.pathname;
+
+    const navigate = useNavigate();
+
+    const navigateToSection = (path) => {
+
+        console.info(location)
+        if (location === '/') {
+            props.scrolltosection(path)
+        } else {
+            navigate('/')
+            setTimeout(() => {
+                props.scrolltosection(path)
+                props.setCurrentActive(path)
+            }, 200);
+        }
+    }
+
     return (
         <div className="header-main bg-light sticky-top">
             <header>
@@ -32,29 +51,51 @@ function MyNavbar(props) {
 
                                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                                     <ul className="navbar-nav m-auto mb-2 mb-lg-0">
-                                        <li className="nav-item active">
-                                            <NavLink to="/" onClick={()=>{props.scrolltosection(props.homeref)}} className="nav-link" >Home</NavLink>
+                                        <li className="nav-item ">
+                                            <span
+                                                onClick={() => {
+                                                    navigateToSection('home')
+                                                }}
+                                                className={`nav-link ${props.currentActive === 'home' ? 'active-link' : ''} `} >Home</span>
                                         </li>
                                         <li className="nav-item">
-                                            <NavLink  to="/ride" onClick={()=>{props.scrolltosection(props.rideref)}} className="nav-link" >ride</NavLink>
+                                            <span onClick={() => {
+                                                navigateToSection('ride')
+                                            }}
+                                                className={`nav-link ${props.currentActive === 'ride' ? 'active-link' : ''} `} >ride</span>
                                         </li>
                                         <li className="nav-item">
-                                            <NavLink to='/cars' className="nav-link" >Cars</NavLink>
+                                            <span onClick={() => {
+                                                navigate("/cars")
+                                                props.setCurrentActive('cars')
+                                            }}
+                                                className={`nav-link ${props.currentActive === 'cars' ? 'active-link' : ''} `} >Cars</span>
                                         </li>
                                         <li className="nav-item">
-                                            <NavLink to='/bikes' className="nav-link" >Bikes</NavLink>
+                                            <span className="nav-link" >Bikes</span>
                                         </li>
                                         <li className="nav-item">
-                                            <NavLink to='/about' onClick={()=>{props.scrolltosection(props.aboutref)}} className="nav-link" >About</NavLink>
+                                            <span
+                                                onClick={() => {
+                                                    navigateToSection('about')
+                                                }}
+                                                className={`nav-link ${props.currentActive === 'about' ? 'active-link' : ''} `}  >About</span>
                                         </li>
                                         <li className="nav-item">
-                                            <NavLink to='/contact' onClick={()=>{props.scrolltosection(props.contactref)}} className="nav-link">Contact</NavLink>
+                                            <span to="/"
+                                                onClick={() => {
+                                                    navigateToSection('contact')
+                                                }}
+                                                className={`nav-link ${props.currentActive === 'contact' ? 'active-link' : ''} `} >Contact</span>
                                         </li>
 
                                     </ul>
 
                                     <form className="d-flex">
-                                        <NavLink className="btn-login" to="/"> Login</NavLink>
+                                        <Link className="btn-login" to="/login" onClick={() => {
+                                            navigate('/login');
+                                            // console.log("==============");
+                                        }}> Login</Link>
                                     </form>
                                 </div>
                             </nav>

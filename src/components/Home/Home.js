@@ -1,12 +1,11 @@
 import React, { Fragment } from 'react'
 import '../Home/Home.css'
 import CarImage from '../../Images/Car-Design.png'
-import homeref from '../Navbar/MyNavbar'
 function Home(props) {
   return (
     <Fragment>
       <section className='home-section lg'  >
-        <div className="container " ref={props.homeref}>
+        <div className="container " ref={props.homeref} >
           <div className="row justify-content-between">
             <div className="home-text-section col-lg-4 align-self-center order-1 order-lg-1 order-md-2 order-sm-2  mt-sm-5 mt-5">
               <div className="home-text ">
