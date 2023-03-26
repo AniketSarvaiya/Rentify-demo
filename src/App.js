@@ -13,6 +13,8 @@ import Login from './components/Login&Register/Login';
 import Register from './components/Login&Register/Register';
 import Cars from './components/Cars';
 import { useEffect, useRef, useState } from 'react';
+import Profile from './components/Profile&Booking/Profile';
+import Booking from './components/Profile&Booking/Booking';
 // import Main from './Main';
 // import "bootstrap/dist/js/bootstrap.min.js";
 
@@ -25,6 +27,10 @@ function App() {
 
   const [activeNavbar, setActiveNavbar] = useState("false");
   const [currentActive, setCurrentActive] = useState('home');
+
+  const locationpath = useLocation();
+  const hidenavbar =
+    locationpath.pathname === '/login' || locationpath.pathname === "/register";
 
   const scrolltosection = (path) => {
     if (path === 'home') {
@@ -54,13 +60,13 @@ function App() {
   };
 
   const location = window.location.pathname;
-  console.log("============" + location);
+  // console.log("============" + location);
 
   useEffect(() => {
 
     window.addEventListener('scroll', function () {
       setTimeout(() => {
-        console.info(location)
+        // console.info(location)
         if (location === '/') {
           const observable = {
             home: homeref.current,
@@ -90,29 +96,30 @@ function App() {
           }
         }
         // }, 200);
-      })
+      });
     }, [])
   });
   return (
     <div className="App">
-      <BrowserRouter>
-        {/* {(activeNavbar==='false') ? '' : */}
+      {!hidenavbar &&
         <MyNavbar setCurrentActive={setCurrentActive} homeref={homeref} rideref={rideref} aboutref={aboutref} contactref={contactref} scrolltosection={scrolltosection} currentActive={currentActive} />
-        {/* } */}
-        <Routes>
-          {/* <Route path="/"  element={<Home />} />
+      }
+      <Routes>
+        {/* <Route path="/"  element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />*/}
-          <Route path="/cars" element={<Cars />} />
-          {/* <Route path="/bikes" element={<Bikes />} /> */}
-          {/* <Route path='/*' element={<PageError />} /> */}
-          <Route path='/register' element={<Register />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/' element={<MainFeed homeref={homeref} rideref={rideref} aboutref={aboutref} contactref={contactref} scrolltosection={scrolltosection} currentActive={currentActive} />} />
-          {/* <Route path='/' element={<Main setCurrentActive={setCurrentActive} homeref={homeref} rideref={rideref} aboutref={aboutref} contactref={contactref} scrolltosection={scrolltosection} currentActive={currentActive} />} /> */}
-        </Routes>
-        {/* <Login/> */}
-      </BrowserRouter>
+        <Route path="/cars" element={<Cars />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/booking" element={<Booking />} />
+        {/* <Route path="/bikes" element={<Bikes />} /> */}
+        {/* <Route path='/*' element={<PageError />} /> */}
+        <Route path='/register' element={<Register />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/' element={<MainFeed homeref={homeref} rideref={rideref} aboutref={aboutref} contactref={contactref} scrolltosection={scrolltosection} currentActive={currentActive} />} />
+        {/* <Route path='/' element={<Main setCurrentActive={setCurrentActive} homeref={homeref} rideref={rideref} aboutref={aboutref} contactref={contactref} scrolltosection={scrolltosection} currentActive={currentActive} />} /> */}
+      </Routes>
+      {/* <Login/> */}
+      {/* </BrowserRouter> */}
     </div>
   );
 };

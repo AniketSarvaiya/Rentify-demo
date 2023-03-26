@@ -1,0 +1,42 @@
+.profile-image-container{
+    height: 300px;
+    border-bottom: 1px solid lightblue;
+    /* display: flex;
+    justify-content: center; */
+}
+.profile-info>form>input {
+	background-color: #eee;
+	border: none;
+	padding: 12px 15px;
+	margin: 8px 0;
+	width:  90%;
+}
+.profile-info{
+    min-height: 100vh;
+    border-left: 1px solid lightblue;
+    border-radius: 5px;
+}
+.save-btn{
+    border-radius: 20px;
+	border: orangered;
+	/* width: 100px; */
+	/* border: 1px solid grey; */
+	background-color: orangered;
+	color: white;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 13px 70px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: all 0.2s;
+    cursor: pointer;
+}
+.save-btn:hover{
+    color: black;
+}
+@media only screen and (max-width: 760px) { 
+		.profile-info{
+			/* padding: 13px 30px; */
+            border: none;
+		}
+  }

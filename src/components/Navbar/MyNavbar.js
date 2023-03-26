@@ -1,23 +1,8 @@
 import '../Navbar/MyNavbar.css'
 import { NavLink, Link, useNavigate, useLocation } from 'react-router-dom'
-// import { useRef } from 'react';
-// import Login from '../Login&Register/Login';
+import Avatar from 'react-avatar';
 
 function MyNavbar(props) {
-    // const location = useLocation();
-
-
-    // const homeref = useRef(null);
-    // const ride = useRef(null);
-    // const about = useRef(null);
-    // const contact = useRef(null);
-
-    // const scrolltosection = (toelement) => {
-    //     window.scrollTo({
-    //         top: toelement.currunt.offsetTop,
-    //         behavior: "smooth"
-    //     });
-    // };
 
     const location = window.location.pathname;
 
@@ -25,7 +10,7 @@ function MyNavbar(props) {
 
     const navigateToSection = (path) => {
 
-        console.info(location)
+        // console.info(location)
         if (location === '/') {
             props.scrolltosection(path)
         } else {
@@ -90,13 +75,35 @@ function MyNavbar(props) {
                                         </li>
 
                                     </ul>
+                                    <div className="profile-menu d-flex flex-row">
+                                        <ul className='navbar-nav m-auto mb-2 mb-lg-0'>
+                                            <li className="nav-item profile">
+                                                <span onClick={() => {
+                                                    navigate("/booking")
+                                                    props.setCurrentActive('booking')
+                                                }}
+                                                    className={`nav-link ${props.currentActive === 'booking' ? 'active-link' : ''} `} >Booking</span>
+                                            </li>
+                                            <li className="nav-item d-flex profile">
+                                                <span onClick={() => {
+                                                    navigate("/profile")
+                                                    props.setCurrentActive('profile')
+                                                }}
+                                                    className={`nav-link ${props.currentActive === 'profile' ? 'active-link' : ''} `} >
+                                                    Profile
+                                                </span>
+                                                <Avatar className='profile-avtar text-center ms-1' vkontakteId="1" size="35" src='https://media.licdn.com/dms/image/D4D03AQHIYzfbe-WXjQ/profile-displayphoto-shrink_800_800/0/1678627395721?e=1684368000&v=beta&t=fe1L9BYgOOAYvFRRQj90dAfApSVPt1SIOPxNFgaGynM' />
 
-                                    <form className="d-flex">
-                                        <Link className="btn-login" to="/login" onClick={() => {
-                                            navigate('/login');
-                                            // console.log("==============");
-                                        }}> Login</Link>
-                                    </form>
+                                            </li>
+
+                                        </ul>
+                                        <form className="d-flex">
+                                            <Link className="btn-login" to="/login" onClick={() => {
+                                                navigate('/login');
+                                                // console.log("==============");
+                                            }}> Login</Link>
+                                        </form>
+                                    </div>
                                 </div>
                             </nav>
                         </div>

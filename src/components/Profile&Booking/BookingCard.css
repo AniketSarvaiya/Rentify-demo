@@ -1,0 +1,41 @@
+.booked-car-img > img{
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0;
+}
+.car-rent{
+    color: orangered;
+}
+.booked-car-card{
+    min-height: 350px;
+    width: 250px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.btn-cancel-booking{
+    border-radius: 10px;
+	border: orangered;
+	/* width: 100px; */
+	/* border: 1px solid grey; */
+	background-color: orangered;
+	color: white;
+	font-size: 13px;
+	font-weight: bold;
+	padding: 12px 50px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: all 0.2s;
+}
+.btn-cancel-booking:hover{
+    color: black;
+}
+.info-icon{
+    color: orangered;
+}
+.car-info{
+    padding:0;
+}
+.car-rent-info{
+    padding: 0;
+}
